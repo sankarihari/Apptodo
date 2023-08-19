@@ -1,8 +1,9 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { VisibilitySharp } from '@mui/icons-material';
+import axios from 'axios';
 
 const Homepage = () => {
     const [input, setInput] = useState([]);
@@ -19,7 +20,6 @@ const Homepage = () => {
   
         .then((response) => {
           setInput(response.data.data);
-          setFilteredData(response.data.data);
         })
         .catch((error) => {
           console.error(error);

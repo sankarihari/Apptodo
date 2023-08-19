@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 const todoSchema = mongoose.Schema({
-    list:String,
-    status:String,
+    list:String
+
    
 
 });

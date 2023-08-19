@@ -1,30 +1,33 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import React, { useEffect, useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { VisibilitySharp } from '@mui/icons-material';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Homepage = () => {
-    const [input, setInput] = useState([]);
-  
 
-  
+const Homepage = () => {
+    const [router, setrouter] = useState([]);
+
     useEffect(() => {
-      fetchDataFromDatabase();
-    }, []);
-  
-    const fetchDataFromDatabase = () => {
-      axios
-        .get(`http://localhost:5000/api/viewdata`)
-  
-        .then((response) => {
-          setInput(response.data.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
+        fetchDataFromDatabase();
+      }, []);
+    
+      const fetchDataFromDatabase = () => {
+        axios
+         
+          .get(`http://localhost:5000/api/viewdata`)
+    
+          .then((response) => {
+            setrouter(response.data.data);
+           
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+    
+
   
   return (
     <div>
@@ -45,7 +48,7 @@ const Homepage = () => {
                             </TableCell>
                             <TableCell>
                            
-                            <DeleteIcon/>
+                            <DeleteIcon />
                             <VisibilitySharp/>
 
                             </TableCell>

@@ -17,7 +17,7 @@ router.get('/getdata',async(req,res)=>{
         console.log(error);
         
     }
-})
+});
 
 // POST
 router.post('/postdata', async(req,res)=>{
@@ -32,7 +32,19 @@ router.post('/postdata', async(req,res)=>{
         console.log(error);
         
     }
-})
+});
+router.delete("/deletepost/:_id", async (req, res) => {
+    try {
+      let id = req.params._id;
+      await Todolist.findByIdAndDelete(id);
+      res.status(200).json({ message: " deleted successfully" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json("Error!!! Data not deleted");
+    }
+  });
+  
+
 
 
 module.exports=router;

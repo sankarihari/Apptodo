@@ -1,12 +1,9 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material'
+import { Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material'
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+
 
 const Frontpage = () => {
-    const navigate = useNavigate();
-    const ButtonClick = (val) => {
-        navigate("/home", { state: { updateData: val } });
-      };
+    
     return (
         <div   >
             <Card sx={{ maxWidth: 345 }}>

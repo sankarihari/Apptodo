@@ -16,7 +16,7 @@ const Homepage = () => {
       const fetchDataFromDatabase = () => {
         axios
          
-          .get(`http://localhost:5000/api/viewdata`)
+          .get(`http://localhost:5000/api/getdata`)
     
           .then((response) => {
             setrouter(response.data.data);
@@ -52,7 +52,9 @@ const Homepage = () => {
                             <VisibilitySharp/>
 
                             </TableCell>
-                            <TableCell></TableCell>
+                            <TableCell>
+                                
+                            </TableCell>
                         </TableRow>
                         <AddIcon/>
 
